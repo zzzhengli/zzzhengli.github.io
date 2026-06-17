@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Zhengli's Website</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <nav>
+        <span class="nav-name">Zhengli</span>
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero fade-in">
+        <h1>Hi, I'm <span>Zhengli</span></h1>
+        <p>IT student at Singapore Polytechnic. Recently completed an internship where I researched, prototyped, and
+            built internal tools across a range of technologies. I enjoy writing clean, practical code and figuring out
+            how things fit together.</p>
+        <div class="hero-links">
+            <a href="https://github.com/zzzhengli" class="link-pill" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/ng-zhengli/" class="link-pill" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                </svg>
+                LinkedIn
+            </a>
+            <a href="mailto:your@gmail.com" class="link-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>
+                Email
+            </a>
+            <a href="resume.pdf" download class="link-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Resume
+            </a>
+        </div>
+    </div>
+
+    <section id="projects" class="fade-in">
+        <p class="section-label">Projects</p>
+
+        <div class="project-card">
+            <div class="project-header">
+                <span class="project-title">Hazardous substance routing</span>
+                <span class="project-tag">Proof of concept</span>
+            </div>
+            <p class="project-body">
+                Singapore's NEA publishes approved routes for hazardous substance transportation, but no structured
+                geospatial data exists publicly. I sourced road names from the accompanying spreadsheet, parsed
+                OpenStreetMap data, and manually mapped each segment using geojson.io to reconstruct the route network
+                as usable GeoJSON.<br><br>
+                For the routing layer, I researched the Vehicle Routing Problem to account for multiple drivers and
+                delivery destinations with working hour constraints. I experimented with several approaches — running
+                into complexity issues that caused runtimes exceeding 5 minutes — which pushed me to rethink the problem
+                structure and tradeoffs between accuracy and performance.
+            </p>
+            <div class="project-stack">
+                <span class="stack-tag">Python</span>
+                <span class="stack-tag">OpenStreetMap</span>
+                <span class="stack-tag">GeoJSON</span>
+                <span class="stack-tag">VRP</span>
+                <span class="stack-tag">Graph algorithms</span>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <span class="project-title">Chatbot analytics dashboard</span>
+                <span class="project-tag">Internal tool</span>
+            </div>
+            <p class="project-body">
+                This dashboard monitored the same chatbot whose backend I had previously refactored from Java to Python.
+                Built full stack — React frontend, Flask API, MongoDB — covering authentication, user management, lead
+                tracking, and profile pages. My first time working with a document database after only having used
+                SQL.<br><br>
+                The main challenge was organisational: building against unfinished designs led to repeated CSS
+                refactors. It taught me the value of clear design specs and keeping dev and design teams aligned. Also
+                picked up React patterns like reusable components that I've carried into subsequent work.
+            </p>
+            <div class="project-stack">
+                <span class="stack-tag">React</span>
+                <span class="stack-tag">Flask</span>
+                <span class="stack-tag">MongoDB</span>
+                <span class="stack-tag">Python</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="fade-in">
+        <p class="section-label">Experience</p>
+        <div class="exp-entry">
+            <div class="exp-header">
+                <span class="exp-role">[Job title]</span>
+                <span class="exp-date">[Start] – [End]</span>
+            </div>
+            <p class="exp-company">[Company name]</p>
+            <ul class="exp-bullets">
+                <li>Researched and prototyped a routing solution for hazardous substance transportation, mapping
+                    government-sourced road restrictions onto OpenStreetMap data and cleaning GeoJSON to ensure routing
+                    accuracy.</li>
+                <li>Developed and maintained a full stack analytics dashboard for chatbot monitoring, using Flask,
+                    React, and MongoDB.</li>
+                <li>Migrated RPA workflows from ElectroNeek to an open source solution, eliminating enterprise software
+                    licensing costs.</li>
+                <li>Migrated chatbot backend from Java to Python, analysing and rewriting the existing codebase to
+                    improve maintainability.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <p class="section-label">Skills</p>
+        <div class="skills-grid">
+            <div class="skill-group">
+                <p class="skill-group-label">Languages</p>
+                <p class="skill-list">Python<br>JavaScript<br>HTML & CSS<br>SQL</p>
+            </div>
+            <div class="skill-group">
+                <p class="skill-group-label">Frameworks & tools</p>
+                <p class="skill-list">React<br>Flask<br>MongoDB<br>Playwright<br>pytest<br>Git<br>Figma</p>
+            </div>
+            <div class="skill-group">
+                <p class="skill-group-label">Practices</p>
+                <p class="skill-list">REST APIs<br>CI/CD<br>Agile / Scrum<br>Technical documentation<br>(Sphinx,
+                    Docsify)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Zhengli · Singapore</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+
+</html>
